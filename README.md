@@ -1,2 +1,2 @@
 # Simulated Natural Simulation
-To execute use, python ./simulate.py
+To execute use, python ./testing.py
