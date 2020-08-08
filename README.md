@@ -8,9 +8,9 @@ In this world, there are Units they live on a grid with food scattered around an
   - Blue: Slower than base speed
   - Green: Equal to base speed
   - Red: Faster then base speed
-- All these qualities require some energy and no Unit can can each one of them to its maximum extent.
+- All these qualities require some energy and no Unit can have each one of them to its maximum extent.
 - Larger Units can eat smaller Units and survive to see the next day.
-- Eating a certain amount of food allows one Unit to reproduce and make a offspring with a mutated characteristic set (genome if u like).
+- Eating a certain amount of food allows one Unit to reproduce and make an offspring with a mutated characteristic set (genome if u like).
 - Only the fittest survive.
 
 # How to run?
