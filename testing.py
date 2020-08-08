@@ -2,20 +2,16 @@ import pygame
 from Unit import *
 from pygame.locals import *
 import os
+from CONSTANTS import *
 
 pygame.init()
-WIDTH = 1000
-HEIGHT = 1000
-FPS = 60
 CLOCK = pygame.time.Clock()
 
 surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 simOver = False
 
-Population = 50
-Foods = []
-Food_Count = 100
+
 
 units = []
 surface.fill((255, 255, 255))
@@ -24,6 +20,7 @@ for i in range(0, Population):
     pygame.draw.circle(surface, (0, 0, 0), (u.x, u.y), int(u.size))
     units.append(u)
 
+''' Function to place food randomly on the grid'''
 def placeFood(N):
     global Foods, units
     foodAt = random.sample(range(0, WIDTH*HEIGHT), N)
@@ -31,6 +28,7 @@ def placeFood(N):
         Foods.append((food//WIDTH, food%HEIGHT)) 
         
 
+'''This timer is to update the data in the data.txt file to update the graphs'''
 pygame.time.set_timer(USEREVENT+1, 3000)
 
 placeFood(Food_Count)
@@ -44,6 +42,7 @@ while not simOver:
         if event.type == pygame.QUIT:
             simOver = True
         if event.type == USEREVENT+1:
+            ''' Updating data.txt file '''
             bestUnit = None
             with open("data.txt", "w") as wr:
                 for unit in units:
